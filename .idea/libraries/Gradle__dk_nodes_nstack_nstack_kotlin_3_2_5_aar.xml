@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: dk.nodes.nstack:nstack-kotlin:3.2.5@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7bd44c7c66be93f050995bfd1f162ac9/jetified-nstack-kotlin-3.2.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7bd44c7c66be93f050995bfd1f162ac9/jetified-nstack-kotlin-3.2.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7bd44c7c66be93f050995bfd1f162ac9/jetified-nstack-kotlin-3.2.5/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dk.nodes.nstack/nstack-kotlin/3.2.5/751cd75c4a211584887507d74e04ba68ba851f5e/nstack-kotlin-3.2.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dk.nodes.nstack/nstack-kotlin/3.2.5/b3c72f8362e879b63717675279a937a341ec5f56/nstack-kotlin-3.2.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

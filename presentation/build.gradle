@@ -1,0 +1,95 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+
+android {
+    compileSdkVersion sdks.compileSdkVersion
+    defaultConfig {
+        minSdkVersion sdks.minSdkVersion
+        targetSdkVersion sdks.targetSdkVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "APPLICATION_ID", "\"dk.nodes.template.presentation\""
+        }
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation "com.google.android.material:material:$versions.material"
+    implementation "androidx.appcompat:appcompat:$versions.appcompat"
+    implementation "androidx.arch.core:core-common:$versions.archCore"
+    implementation "androidx.arch.core:core-runtime:$versions.archCore"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.constraint_layout}"
+
+    implementation "androidx.lifecycle:lifecycle-livedata-core:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-runtime:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
+
+    // Utils & Extensions
+    implementation "dk.nodes.utils:kotlin:${versions.nodes_utils}"
+    implementation "dk.nodes.utils:android:${versions.nodes_utils}"
+
+//    implementation "dk.nodes.arch:base:${versions.nodes_arch}"
+    implementation "androidx.core:core-ktx:${versions.ktx}"
+    implementation "com.google.dagger:dagger-android:${versions.dagger}"
+    implementation "com.google.dagger:dagger-android-support:${versions.dagger}"
+    implementation 'androidx.room:room-runtime:2.2.5'
+    kapt 'androidx.room:room-compiler:2.2.5'
+    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
+    kapt "com.google.dagger:dagger-android-processor:${versions.dagger}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
+    testImplementation "junit:junit:$versions.junit"
+    implementation "androidx.core:core-ktx:${versions.ktx}"
+    implementation "com.jakewharton.timber:timber:${versions.timber}"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$versions.desugaring"
+    // Networking
+
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+    implementation("com.squareup.retrofit2:retrofit:2.9.0") {
+        exclude module: 'okhttp'
+    }
+    // Gson
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // tensorflow
+    implementation 'org.tensorflow:tensorflow-lite:2.3.0'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation "com.android.support:support-core-utils:28.0.0"
+
+
+}

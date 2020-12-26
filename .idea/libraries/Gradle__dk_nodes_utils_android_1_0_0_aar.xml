@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: dk.nodes.utils:android:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3b9a0a74a2526dcdfc41f288c1b752c9/jetified-android-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3b9a0a74a2526dcdfc41f288c1b752c9/jetified-android-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3b9a0a74a2526dcdfc41f288c1b752c9/jetified-android-1.0.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dk.nodes.utils/android/1.0.0/bc08d30a4fa3b5c14c890fd963db308e6069764/android-1.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dk.nodes.utils/android/1.0.0/597179a14bb50af1a7ea61ffe3d8dff230747a8d/android-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

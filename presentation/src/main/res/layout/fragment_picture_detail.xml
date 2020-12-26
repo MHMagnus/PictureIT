@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movieDetailsSpecRootLl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/photoDetails"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/photoIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_corners_bg"
+                    android:elevation="4dp"
+                    />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/shareBtn"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="16dp"
+                android:clickable="true"
+                android:src="@drawable/ic_icon_m_share_dark_grey"
+                app:layout_constraintBottom_toTopOf="@+id/labelsTv"
+                app:layout_constraintEnd_toEndOf="@id/photoDetails"
+                app:layout_constraintStart_toStartOf="@id/photoDetails"
+                app:layout_constraintTop_toBottomOf="@+id/photoDetails" />
+
+
+
+
+            <TextView
+                android:id="@+id/labelsTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/darkGrey"
+                android:textSize="20sp"
+                android:background="@drawable/round_corners_bg"
+                android:elevation="4dp"
+                android:layout_margin="16dp"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shareBtn" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/confidencesTv"-->
+<!--                android:layout_width="200dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="top"-->
+<!--                android:background="@color/white"-->
+<!--                android:paddingStart="8dp"-->
+<!--                android:paddingTop="4dp"-->
+<!--                android:paddingEnd="8dp"-->
+<!--                android:paddingBottom="16dp"-->
+<!--                tools:text="BOBOBOBOBOBO"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="20dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/labelsTv"-->
+<!--               app:layout_constraintTop_toBottomOf="@id/shareBtn" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

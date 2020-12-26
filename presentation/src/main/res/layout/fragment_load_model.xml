@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentHomeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedSv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <ImageView
+                android:id="@+id/loadModelOne"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:src="@drawable/no_photo_small"
+                app:layout_constraintHeight_percent=".3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/loadModel1Et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="loadModelOne"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/loadModelOne"
+                app:layout_constraintStart_toStartOf="@+id/loadModelOne"
+                app:layout_constraintTop_toBottomOf="@+id/loadModelOne" />
+
+            <ImageView
+                android:id="@+id/loadModelTwo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:src="@drawable/no_photo_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/loadModel2Et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="loadModelTwo"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/loadModelTwo"
+                app:layout_constraintStart_toStartOf="@+id/loadModelTwo"
+                app:layout_constraintTop_toBottomOf="@+id/loadModelTwo" />
+
+            <ImageView
+                android:id="@+id/loadModelThree"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:src="@drawable/no_photo_small"
+                app:layout_constraintHeight_percent=".3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loadModel1Et"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/loadModel3Et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="loadModelThree"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/loadModelThree"
+                app:layout_constraintStart_toStartOf="@+id/loadModelThree"
+                app:layout_constraintTop_toBottomOf="@+id/loadModelThree" />
+
+            <ImageView
+                android:id="@+id/loadModelFour"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:src="@drawable/no_photo_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".3"
+                app:layout_constraintTop_toBottomOf="@+id/loadModel2Et"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/loadModel4Et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="loadModelFour"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/loadModelFour"
+                app:layout_constraintStart_toStartOf="@+id/loadModelFour"
+                app:layout_constraintTop_toBottomOf="@+id/loadModelFour" />
+
+
+            <ImageView
+                android:id="@+id/saveModelBtn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:src="@drawable/floppydisk_vector"
+                app:layout_constraintBottom_toTopOf="@id/saveModelTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loadModel4Et"
+                app:layout_constraintWidth_percent=".2" />
+
+            <TextView
+                android:id="@+id/saveModelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:text="@string/save_model"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/saveModelBtn"
+                app:layout_constraintStart_toStartOf="@id/saveModelBtn"
+                app:layout_constraintTop_toBottomOf="@id/saveModelBtn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    <?xml version="1.0" encoding="utf-8"?>-->
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:id="@+id/fragmentHomeFragment"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical"-->
+    <!--tools:ignore="MissingPrefix">-->
+    <!--<androidx.core.widget.NestedScrollView-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:background="@color/white">-->
+
+    <!--        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+    <!--            android:id="@+id/swipeRefreshLayout"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent">-->
+    <!--            <androidx.recyclerview.widget.RecyclerView-->
+    <!--                android:id="@+id/picturesResultsRv"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:clickable="true"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                tools:listitem="@layout/row_pictures"-->
+    <!--                tools:visibility="visible" />-->
+    <!--        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--</androidx.core.widget.NestedScrollView>-->
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->

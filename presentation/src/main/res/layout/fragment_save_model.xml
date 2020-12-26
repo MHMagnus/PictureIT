@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentHomeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedSv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/savedModel1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:src="@drawable/no_photo_small"
+                app:layout_constraintHeight_percent=".25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4" />
+
+            <EditText
+                android:id="@+id/savedModel1Et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click here to add title"
+                android:textSize="20dp"
+                android:imeOptions="actionDone"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/savedModel1"
+                app:layout_constraintStart_toStartOf="@+id/savedModel1"
+                app:layout_constraintTop_toBottomOf="@+id/savedModel1" />
+
+            <ImageView
+                android:id="@+id/savedModel2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:src="@drawable/no_photo_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".25"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4" />
+
+            <EditText
+                android:id="@+id/savedModel2Et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click here to add title"
+                android:textSize="20dp"
+                android:imeOptions="actionDone"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/savedModel2"
+                app:layout_constraintStart_toStartOf="@+id/savedModel2"
+                app:layout_constraintTop_toBottomOf="@+id/savedModel2" />
+
+            <ImageView
+                android:id="@+id/savedModel3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:src="@drawable/no_photo_small"
+                app:layout_constraintHeight_percent=".25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savedModel1Et"
+                app:layout_constraintWidth_percent=".4" />
+
+            <EditText
+                android:id="@+id/savedModel3Et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click here to add title"
+                android:textSize="20dp"
+                android:imeOptions="actionDone"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/savedModel3"
+                app:layout_constraintStart_toStartOf="@+id/savedModel3"
+                app:layout_constraintTop_toBottomOf="@+id/savedModel3" />
+
+            <ImageView
+                android:id="@+id/savedModel4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:src="@drawable/no_photo_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".25"
+                app:layout_constraintTop_toBottomOf="@+id/savedModel2Et"
+                app:layout_constraintWidth_percent=".4" />
+
+            <EditText
+                android:id="@+id/savedModel4Et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click here to add title"
+                android:textSize="20dp"
+                android:imeOptions="actionDone"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/savedModel4"
+                app:layout_constraintStart_toStartOf="@+id/savedModel4"
+                app:layout_constraintTop_toBottomOf="@+id/savedModel4" />
+
+            <ImageView
+                android:id="@+id/deleteStoredModelsFromSaveIv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:src="@drawable/ic_bin_vector"
+                app:layout_constraintBottom_toTopOf="@id/deleteStoredModelsTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savedModel4Et"
+                app:layout_constraintWidth_percent=".24" />
+
+            <TextView
+                android:id="@+id/deleteStoredModelsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:text="@string/delete_all_models"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/deleteStoredModelsFromSaveIv"
+                app:layout_constraintStart_toStartOf="@id/deleteStoredModelsFromSaveIv"
+                app:layout_constraintTop_toBottomOf="@id/deleteStoredModelsFromSaveIv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

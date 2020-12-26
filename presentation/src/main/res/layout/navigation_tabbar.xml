@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@color/white">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loadModelTab"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/picturesTab"
+        app:layout_constraintStart_toEndOf="@id/negatativeTab">
+
+        <ImageView
+            android:id="@+id/savedModelLogo"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_saved_bluegrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@string/saved_models"
+            android:textColor="@color/tabbar_selector"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/savedModelLogo"
+            app:layout_constraintStart_toStartOf="@id/savedModelLogo"
+            app:layout_constraintTop_toBottomOf="@+id/savedModelLogo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/picturesTab"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/resultsTab"
+        app:layout_constraintStart_toEndOf="@id/loadModelTab">
+
+        <ImageView
+            android:id="@+id/picturesLogo"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_image_pictures_bluegrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@string/pictures"
+            android:textColor="@color/tabbar_selector"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/picturesLogo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/positiveTab"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/resultsTab">
+
+        <ImageView
+            android:id="@+id/positiveLogo"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_icon_l_plus_bluegrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@string/title_positives"
+            android:textColor="@color/tabbar_selector"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/positiveLogo"
+            app:layout_constraintStart_toStartOf="@id/positiveLogo"
+            app:layout_constraintTop_toBottomOf="@+id/positiveLogo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/negatativeTab"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/loadModelTab"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/negativeLogo"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_action_minus_bluegrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@string/title_negatives"
+            android:textColor="@color/tabbar_selector"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/negativeLogo"
+            app:layout_constraintStart_toStartOf="@id/negativeLogo"
+            app:layout_constraintTop_toBottomOf="@+id/negativeLogo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resultsTab"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/positiveTab"
+        app:layout_constraintStart_toEndOf="@id/picturesTab">
+
+        <ImageView
+            android:id="@+id/resultsLogo"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_icon_m_search_bluegrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@string/title_results"
+            android:textColor="@color/tabbar_selector"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultsLogo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: dk.nodes.nstack:nstack-kotlin-core:3.2.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dk.nodes.nstack/nstack-kotlin-core/3.2.5/97df80149914feefd5ad2f64bba30e91e64e4ddb/nstack-kotlin-core-3.2.5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dk.nodes.nstack/nstack-kotlin-core/3.2.5/2c6525434b40a2f0577bc19b480a78b9c70097a9/nstack-kotlin-core-3.2.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dk.nodes.nstack/nstack-kotlin-core/3.2.5/2183a42cc5ce98fb360880ecd7047a006b61e106/nstack-kotlin-core-3.2.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

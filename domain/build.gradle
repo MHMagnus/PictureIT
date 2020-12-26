@@ -1,0 +1,19 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+    implementation group: 'javax.inject', name: 'javax.inject', version: '1'
+
+
+    //Room
+    implementation 'androidx.room:room-runtime:2.2.5'
+    annotationProcessor 'androidx.room:room-compiler:2.2.5'
+    implementation "androidx.room:room-ktx:2.2.5"
+
+
+    implementation("com.squareup.retrofit2:converter-gson:${versions.retrofit}") {
+        exclude module: "retrofit:${versions.retrofit}"
+    }
+
+}

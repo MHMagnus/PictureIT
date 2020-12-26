@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.dagger:dagger-android:2.28@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cfcb5fbb8b66f0d3672f8ebf098e8b84/jetified-dagger-android-2.28/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cfcb5fbb8b66f0d3672f8ebf098e8b84/jetified-dagger-android-2.28/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cfcb5fbb8b66f0d3672f8ebf098e8b84/jetified-dagger-android-2.28/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger-android/2.28/f3e14ae0654b50f10995dca4bc45646acdde831a/dagger-android-2.28-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger-android/2.28/18ed24f484de6b85b71bd95519aab720024b816a/dagger-android-2.28-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
