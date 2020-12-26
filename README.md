@@ -1,4 +1,4 @@
-## 📖 Project description
+## 📖 PictureIT Guide
 This repo contains a URF system for Android phones to explore the private DCIM collection.
 
 1. Clone repo.
