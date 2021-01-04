@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +22,7 @@ import dk.nodes.template.presentation.ui.picture_detail.PictureDetailFragment
 import dk.nodes.template.presentation.util.GridItemDecoration
 import dk.nodes.template.presentation.util.VectorLab
 import kotlinx.android.synthetic.main.fragment_history.*
+import kotlinx.android.synthetic.main.fragment_positive_list.*
 
 class HistoryFragment : BaseFragment() {
     private val viewModel by viewModel<HistoryViewModel>()
@@ -92,6 +94,7 @@ class HistoryFragment : BaseFragment() {
     }
 
     private fun showPhotos() {
+        fragmentPictures.background = null
         val list: MutableList<Photo> = mutableListOf()
         addNewPhotosToFeed(list)
         setupAdapter()

@@ -3,6 +3,7 @@ package dk.nodes.template.presentation.util
 import android.content.Context
 import android.database.Cursor
 import android.provider.MediaStore
+import dk.nodes.template.presentation.ui.main.database.ServerClientTwo
 import dk.nodes.template.presentation.util.SharedPreferenceUtil.getLastAnalysisInMilliSecSharedPreferences
 import java.util.*
 
@@ -56,7 +57,7 @@ class MediaStoreCheck(private val mContext: Context) {
         println("New images: " + newImages.toTypedArray().contentToString())
         println("New images size: " + newImages.size)
         if (newImages.isNotEmpty()) {
-            val serverClient = ServerClient()
+            val serverClient = ServerClientTwo()
             serverClient.connectServer(mContext, newImages)
         }
     }

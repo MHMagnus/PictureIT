@@ -1,6 +1,7 @@
 package dk.nodes.template.presentation.util
 
 import android.content.Context
+import android.os.Environment
 import dk.nodes.template.presentation.util.SharedPreferenceUtil.writeToSharedPreferences
 import dk.nodes.template.presentation.BuildConfig
 import dk.nodes.template.presentation.ui.home.HomeFragment
@@ -14,6 +15,7 @@ import okhttp3.Request
 import okhttp3.RequestBody
 import org.json.JSONException
 import org.json.JSONObject
+import timber.log.Timber
 import java.io.*
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -87,7 +89,8 @@ class ServerClient {
     }
 
     private fun zip(_files: Array<String?>, zipFileName: String?): File {
-        val internalPath = "/data/data/" + BuildConfig.LIBRARY_PACKAGE_NAME
+        val internalPath = "/data/data/" + MainActivity.context?.packageName
+        Timber.d("$internalPath test234")
         val zippedFile = File(internalPath, zipFileName)
         try {
             //boolean fileCreation = zippedFile.createNewFile();

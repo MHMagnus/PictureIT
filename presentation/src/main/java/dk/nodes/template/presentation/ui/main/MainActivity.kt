@@ -3,22 +3,28 @@ package dk.nodes.template.presentation.ui.main
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
+import android.database.Cursor
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.provider.MediaStore
 import android.view.Menu
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
+import dk.nodes.template.domain.entities.Photo
 import dk.nodes.template.domain.entities.TabbarType
 import dk.nodes.template.presentation.R
 import dk.nodes.template.presentation.ui.base.BaseActivity
 import dk.nodes.template.presentation.ui.history.HistoryFragment
-import dk.nodes.template.presentation.ui.home.HomeFragment
 import dk.nodes.template.presentation.ui.loadmodel.LoadModelFragment
+import dk.nodes.template.presentation.ui.main.database.ServerClientTwo
 import dk.nodes.template.presentation.ui.main.database.VectorBaseHelper
 import dk.nodes.template.presentation.ui.negative.NegativeListFragment
 import dk.nodes.template.presentation.ui.positive.PositiveListFragment
 import dk.nodes.template.presentation.ui.results.ResultsFragment
+import dk.nodes.template.presentation.util.MediaStoreCheck
+import dk.nodes.template.presentation.util.ServerClient
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.navigation_tabbar.*
 import kotlinx.coroutines.Dispatchers
@@ -27,6 +33,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.io.File
+import java.util.ArrayList
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
 
@@ -221,8 +228,10 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
     }
 
     private fun setupPathDir() {
+        val root = Environment.getExternalStorageDirectory()
+        val dir = File(root.absolutePath,"DBBackup2")
         val backUpDir = File(Environment.getExternalStorageDirectory(), "DBBackup2")
-        val backupDB2 = File(backUpDir, "vectorDB.db")
+        val backupDB2 = File(dir, "vectorDB.db")
         if (backupDB2.exists()) {
             // Creating internal storage databases folder
             var internalPath = ""
@@ -232,10 +241,34 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
             VectorBaseHelper.importDB(backupDB2, internalPath, this)
         }
 //        else {
-//            val serverClient = ServerClient()
-//            serverClient.connectServer(context, allImages)
+//            val mediaStore = MediaStoreCheck(applicationContext)
+//            mediaStore.analyseNewImages()
+//            context = applicationContext
+//            val serverClient = ServerClientTwo()
+//            serverClient.connectServer(context, getAllImagesOnDevice())
 //        }
     }
+//
+//    fun getAllImagesOnDevice(): MutableList<String> {
+//        val projection = arrayOf(MediaStore.Images.Media._ID, MediaStore.Images.Media.DATA)
+//        val cursor = MainActivity.context?.contentResolver?.query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, null, null, MediaStore.Images.Media._ID)
+//        val numberOfPicsOnPhone = cursor?.count
+//        val imagePathIndex = cursor?.getColumnIndex(MediaStore.Images.Media.DATA)
+//
+//        //String[] paths = new String[numberOfPicsOnPhone];
+//        val paths: MutableList<String> = ArrayList()
+//        if (numberOfPicsOnPhone != null) {
+//            (0 until numberOfPicsOnPhone).forEach { i ->
+//                cursor.moveToNext()
+//                val imagePath = imagePathIndex?.let { cursor.getString(it) }
+//                if (imagePath != null) {
+//                    paths.add(imagePath)
+////                    addPhotoToRoom(photo = Photo(imagePath,0))
+//                }
+//            }
+//        }
+//        cursor?.close()
+//        return paths}
 
     private fun requestPermissions() {
         ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS,
@@ -258,6 +291,7 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
         )
 
         var context: Context? = null
+        var packageName: String = context?.packageName ?: ""
 
     }
 
