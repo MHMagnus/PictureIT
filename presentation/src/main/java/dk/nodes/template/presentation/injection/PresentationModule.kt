@@ -2,8 +2,8 @@ package dk.nodes.template.presentation.injection
 
 import dagger.Module
 import dk.nodes.template.presentation.ui.history.HistoryBuilder
-import dk.nodes.template.presentation.ui.positive.PositiveListBuilder
 import dk.nodes.template.presentation.ui.home.HomeBuilder
+import dk.nodes.template.presentation.ui.positive.PositiveListBuilder
 import dk.nodes.template.presentation.ui.main.MainActivityBuilder
 import dk.nodes.template.presentation.ui.negative.NegativeListBuilder
 import dk.nodes.template.presentation.ui.picture_detail.PictureDetailBuilder

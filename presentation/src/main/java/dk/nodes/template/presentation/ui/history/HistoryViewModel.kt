@@ -13,6 +13,7 @@ import dk.nodes.template.domain.interactors.photos.RemovePhotoInteractor
 import dk.nodes.template.domain.interactors.positivePhotos.AddPositivePhotoInteractor
 import dk.nodes.template.domain.managers.PrefManager
 import dk.nodes.template.presentation.ui.base.BaseViewModel
+import dk.nodes.template.presentation.ui.main.MainActivity
 import dk.nodes.template.presentation.util.VectorLab
 import dk.nodes.template.presentation.util.getFullPath
 import kotlinx.coroutines.Dispatchers
@@ -34,6 +35,7 @@ class HistoryViewModel @Inject constructor(
 
     init {
         fetchPicturesFromRoom()
+        getAllImagesOnDevice()
     }
 
     private fun fetchPicturesFromRoom() = viewModelScope.launch(Dispatchers.Main) {
@@ -58,9 +60,8 @@ class HistoryViewModel @Inject constructor(
     private fun randomImageFromDB(cursor: Cursor, vectorLab: VectorLab): String? {
 
         val numberOfUnseenImages = cursor.count
-        Timber.d("Number of images on device: $numberOfUnseenImages test123")
-        vectorLab.sizeOfDatabase()
-
+//        Timber.d("Number of images on device: $numberOfUnseenImages test123")
+//        vectorLab.sizeOfDatabase()
 
         return if (state.list.size == 0) {
             val imagePathIndex = cursor.getColumnIndex(MediaStore.Images.Media.DATA)
@@ -74,6 +75,28 @@ class HistoryViewModel @Inject constructor(
             getFullPath(vectorLab.getPathFromID(randomID))
         }
     }
+
+        fun getAllImagesOnDevice(){
+        val projection = arrayOf(MediaStore.Images.Media._ID, MediaStore.Images.Media.DATA)
+        val cursor = MainActivity.context?.contentResolver?.query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, null, null, MediaStore.Images.Media._ID)
+        val numberOfPicsOnPhone = cursor?.count
+        val imagePathIndex = cursor?.getColumnIndex(MediaStore.Images.Media.DATA)
+
+        //String[] paths = new String[numberOfPicsOnPhone];
+        val paths: MutableList<String> = ArrayList()
+        if (numberOfPicsOnPhone != null) {
+            (0 until numberOfPicsOnPhone).forEach { i ->
+                cursor.moveToNext()
+                val imagePath = imagePathIndex?.let { cursor.getString(it) }
+                if (imagePath != null) {
+                    paths.add(imagePath)
+//                    addPhotoToRoom(photo = Photo(imagePath,0))
+                }
+            }
+        }
+        cursor?.close()
+            state.listOfImagesOnDevice.addAll(paths)
+        }
 
     fun randomPicturesFromDb(vectorLab: VectorLab?, cursor: Cursor?): MutableList<String?> {
         val pathSet: MutableSet<String?> = HashSet()

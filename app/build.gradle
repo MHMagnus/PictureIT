@@ -67,21 +67,21 @@ android {
         dev {
             dimension "default"
             applicationIdSuffix ".dev"
-            manifestPlaceholders = [APP_NAME: "KotlinTemplateDev"]
+            manifestPlaceholders = [APP_NAME: "PictureITDev"]
             buildConfigField "String", "API_URL", "\"https://jsonplaceholder.typicode.com\""
         }
         staging {
             dimension "default"
             applicationIdSuffix ".staging"
             //signingConfig signingConfigs.staging
-            manifestPlaceholders = [APP_NAME: "KotlinTemplateStaging"]
+            manifestPlaceholders = [APP_NAME: "PictureITStaging"]
             buildConfigField "String", "API_URL", "\"https://jsonplaceholder.typicode.com\""
         }
         production {
             dimension "default"
             applicationIdSuffix ".production"
             //signingConfig signingConfigs.production
-            manifestPlaceholders = [APP_NAME: "KotlinTemplate"]
+            manifestPlaceholders = [APP_NAME: "PictureIT"]
             buildConfigField "String", "API_URL", "\"https://jsonplaceholder.typicode.com\""
         }
     }

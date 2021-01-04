@@ -36,7 +36,7 @@ class HomeViewModel @Inject constructor(
         val numberOfImagesOnDevice = cursor.count
         Timber.d("Number of images on device: $numberOfImagesOnDevice")
         vectorLab.queryRandomUnseen()
-        vectorLab.sizeOfDatabase()
+//        vectorLab.sizeOfDatabase()
 
         return if (state.list.size == 0) {
             val imagePathIndex = cursor.getColumnIndex(MediaStore.Images.Media.DATA)

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pinterestpicture" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_component_photo_txt_top"
+        app:layout_constraintBottom_toTopOf="@+id/errorMessageBoxLl"
+        app:layout_constraintEnd_toEndOf="@+id/errorMessageBoxLl"
+        app:layout_constraintStart_toStartOf="@+id/errorMessageBoxLl" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/errorMessageBoxLl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_component_photo_txt_center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.96">
+
+
+        <TextView
+            android:id="@+id/pleaseRefreshIv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Pull down to add images to the feed"
+            android:textColor="@color/darkGrey"
+            android:textSize="26dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_component_photo_txt_bottom_linear"
+        app:layout_constraintEnd_toEndOf="@+id/errorMessageBoxLl"
+        app:layout_constraintStart_toStartOf="@+id/errorMessageBoxLl"
+        app:layout_constraintTop_toBottomOf="@+id/errorMessageBoxLl" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
