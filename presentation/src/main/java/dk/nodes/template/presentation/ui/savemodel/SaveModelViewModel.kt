@@ -33,7 +33,6 @@ class SaveModelViewModel @Inject constructor(
             3 ->         prefManager.setString("SavedModel3Title", text)
             4 ->         prefManager.setString("SavedModel4Title", text)
         }
-        prefManager.setString("SavedModel3Title", text)
     }
 
 

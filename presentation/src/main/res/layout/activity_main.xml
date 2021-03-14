@@ -14,20 +14,6 @@
         android:background="@color/white"
         tools:context=".ui.main.MainActivity">
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/pressToBrowseBtn"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="0dp"-->
-<!--                    android:backgroundTint="@color/selector_primary"-->
-<!--                    android:clickable="true"-->
-<!--                    android:src="@drawable/ic_icon_m_search_dark_grey"-->
-<!--                    app:layout_constraintBottom_toTopOf="@+id/modelTv"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintHeight_percent=".08"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintWidth_percent=".30" />-->
-
-
         <ImageView
             android:id="@+id/burgerMenu"
             android:layout_width="0dp"
@@ -62,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="PictureIT"
+            android:text="@string/app_name"
             android:textColor="@color/cocoa"
             android:textSize="32sp"
             android:fontFamily="serif"
@@ -71,23 +57,6 @@
             app:layout_constraintEnd_toStartOf="@id/presstoStartOver"
             app:layout_constraintStart_toEndOf="@id/burgerMenu"
             app:layout_constraintTop_toTopOf="parent" />
-
-<!--        <TextView
-            android:id="@+id/startOverTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="@string/start_over"
-            android:textColor="@color/darkGrey"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/main_container"
-            app:layout_constraintEnd_toEndOf="@id/presstoStartOver"
-            app:layout_constraintStart_toStartOf="@id/presstoStartOver"
-            app:layout_constraintTop_toBottomOf="@id/presstoStartOver" />-->
-
-        <!-- Fragments Container -->
-
-        <!-- Bottom Navigation View -->
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/main_container"
@@ -99,20 +68,6 @@
             app:layout_constraintTop_toBottomOf="@id/presstoStartOver"
             tools:layout_editor_absoluteX="0dp" />
 
-
-    <!--    <ImageView
-            android:id="@+id/pressToBrowseBtn"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="8sp"
-            android:clickable="true"
-            android:src="@drawable/ic_icon_m_search_bluegrey"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".12"
-            app:layout_constraintWidth_percent=".224" />
-
--->
         <include
             android:id="@+id/bottomNavigation"
             layout="@layout/navigation_tabbar"

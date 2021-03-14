@@ -21,6 +21,15 @@
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor">
         <!-- nstack app id and key from build.gradle manifest placeholder -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
         <meta-data
             android:name="dk.nodes.nstack.appId"
             android:value="${appId}"
