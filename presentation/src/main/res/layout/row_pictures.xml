@@ -18,25 +18,15 @@
         app:layout_constraintWidth_percent=".98"
         app:layout_constraintHeight_percent="1"/>
 
-<!--    <View-->
-<!--        android:id="@+id/positiveView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:background="@color/testColor2"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/pictureIv"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/pictureIv"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/pictureIv"-->
-<!--        android:visibility="invisible"/>-->
+<!--    <ImageView
+        android:id="@+id/imageStateIv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_icon_l_plus_green"
+        app:layout_constraintBottom_toBottomOf="@+id/pictureIv"
+        app:layout_constraintStart_toStartOf="@+id/pictureIv"
+        app:layout_constraintEnd_toEndOf="@+id/pictureIv"/>-->
 
-<!--    <View-->
-<!--        android:id="@+id/negativeView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:background="@color/testColor5"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/pictureIv"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/pictureIv"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/pictureIv"-->
-<!--        android:visibility="invisible"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

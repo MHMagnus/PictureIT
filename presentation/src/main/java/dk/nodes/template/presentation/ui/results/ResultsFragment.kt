@@ -22,6 +22,8 @@ import dk.nodes.template.presentation.util.GridItemDecoration
 import kotlinx.android.synthetic.main.fragment_negative_list.*
 import kotlinx.android.synthetic.main.fragment_results.*
 import kotlinx.android.synthetic.main.fragment_results.noResultsView
+import kotlinx.android.synthetic.main.row_pictures.*
+import kotlinx.android.synthetic.main.row_pictures_results.*
 import timber.log.Timber
 
 class ResultsFragment : BaseFragment() {
@@ -30,12 +32,14 @@ class ResultsFragment : BaseFragment() {
     private var itemTouchHelper: ItemTouchHelper? = null
     private val swipeTreshhold = .1f
     private var imagesOnHomeScreen: MutableList<Photo> = ArrayList()
-    var temp = mutableListOf<Photo>()
+    var positivesList = mutableListOf<Photo>()
+    var negativesList = mutableListOf<Photo>()
+
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
 
@@ -68,11 +72,10 @@ class ResultsFragment : BaseFragment() {
     }
 
     private fun showPhotos(state: ResultsViewState) {
-            temp = state.list
             imagesOnHomeScreen = state.list.asReversed()
-            adapter.setData(state.list.asReversed())
+            adapter.setData(state.list.asReversed(), positivesList, negativesList)
         if (state.list.size > 0) {
-            noResultsView.visibility = View.GONE
+            noResultsView?.visibility = View.GONE
             setupAdapter()
             adapter.notifyDataSetChanged()
         }
@@ -85,11 +88,11 @@ class ResultsFragment : BaseFragment() {
 
     private fun setItemTouchListener() {
         val itemTouchCallback = object :
-                ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT + ItemTouchHelper.LEFT) {
+            ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT + ItemTouchHelper.LEFT) {
             override fun onMove(
-                    recyclerView: RecyclerView,
-                    viewHolder: RecyclerView.ViewHolder,
-                    viewHolder1: RecyclerView.ViewHolder
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                viewHolder1: RecyclerView.ViewHolder
             ): Boolean {
                 return false
             }
@@ -116,15 +119,25 @@ class ResultsFragment : BaseFragment() {
                 }
             }
 
-            override fun onChildDraw(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
+            override fun onChildDraw(
+                c: Canvas,
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                dX: Float,
+                dY: Float,
+                actionState: Int,
+                isCurrentlyActive: Boolean
+            ) {
                 val itemView = viewHolder.itemView
 
                 if (dX > 0) {
-                    val backgroundLeft = ColorDrawable(resources.getColor(if (itemView.right * swipeTreshhold < dX) R.color.testColor2 else R.color.lightGrey))
+                    val backgroundLeft =
+                        ColorDrawable(resources.getColor(if (itemView.right * swipeTreshhold < dX) R.color.testColor2 else R.color.lightGrey))
                     backgroundLeft.setBounds(0, itemView.top, itemView.right + dX.toInt(), itemView.bottom)
                     backgroundLeft.draw(c)
                 } else {
-                    val backgroundRight = ColorDrawable(resources.getColor(if (itemView.right * swipeTreshhold < (dX * -1)) R.color.testColor5 else R.color.lightGrey))
+                    val backgroundRight =
+                        ColorDrawable(resources.getColor(if (itemView.right * swipeTreshhold < (dX * -1)) R.color.testColor5 else R.color.lightGrey))
                     backgroundRight.setBounds(itemView.right, itemView.top, itemView.right + dX.toInt(), itemView.bottom)
                     backgroundRight.draw(c)
                 }
