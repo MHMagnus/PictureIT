@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -19,6 +20,7 @@ import dk.nodes.template.presentation.ui.main.MainActivity
 import dk.nodes.template.presentation.ui.picture_detail.PictureDetailFragment
 import dk.nodes.template.presentation.ui.savemodel.SaveModelFragment
 import dk.nodes.template.presentation.util.GridItemDecoration
+import dk.nodes.template.presentation.util.drawTextOnCanvas
 import kotlinx.android.synthetic.main.fragment_negative_list.*
 import kotlinx.android.synthetic.main.fragment_results.*
 import kotlinx.android.synthetic.main.fragment_results.noResultsView
@@ -32,8 +34,6 @@ class ResultsFragment : BaseFragment() {
     private var itemTouchHelper: ItemTouchHelper? = null
     private val swipeTreshhold = .1f
     private var imagesOnHomeScreen: MutableList<Photo> = ArrayList()
-    var positivesList = mutableListOf<Photo>()
-    var negativesList = mutableListOf<Photo>()
 
 
     override fun onCreateView(
@@ -72,8 +72,9 @@ class ResultsFragment : BaseFragment() {
     }
 
     private fun showPhotos(state: ResultsViewState) {
-            imagesOnHomeScreen = state.list.asReversed()
-            adapter.setData(state.list.asReversed(), positivesList, negativesList)
+            imagesOnHomeScreen = viewModel.stateDotList().asReversed()
+            adapter.setData(imagesOnHomeScreen)
+        println("this is state.list: ${viewModel.stateDotList()}, this is imagesOnHomeScreen: $imagesOnHomeScreen")
         if (state.list.size > 0) {
             noResultsView?.visibility = View.GONE
             setupAdapter()

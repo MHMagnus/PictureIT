@@ -7,6 +7,6 @@ import kotlin.String
 @Entity(tableName = "photos")
 data class Photo(
         @SerializedName("id") @PrimaryKey val photoPath: String,
-        @SerializedName("classifier") val classifier: Int
+        @SerializedName("classifier") var classifier: Int
 )
 

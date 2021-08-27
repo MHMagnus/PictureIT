@@ -34,6 +34,7 @@
 
     <include
         android:id="@+id/noResultsView"
-        layout="@layout/fragment_load_again" />
+        layout="@layout/fragment_load_again"
+        tools:visibility="invisible"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
