@@ -27,14 +27,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/row_pictures"
-                tools:visibility="visible" />
+                tools:listitem="@layout/row_pictures_results" />
 
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <include
         android:id="@+id/noResultsView"
-        layout="@layout/fragment_load_again" />
+        layout="@layout/fragment_load_again"
+        tools:visibility="invisible"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

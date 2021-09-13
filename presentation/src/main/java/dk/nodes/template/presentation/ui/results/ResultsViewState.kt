@@ -6,6 +6,8 @@ import dk.nodes.template.presentation.util.ViewError
 
 data class ResultsViewState(
         val list: MutableList<Photo> = mutableListOf(),
+        val listPositives: MutableList<Photo> = mutableListOf(),
+        val listNegatives: MutableList<Photo> = mutableListOf(),
         val viewError: SingleEvent<ViewError>? = null,
         val isLoading: Boolean = false
 )

@@ -11,21 +11,20 @@
         android:id="@+id/pictureIv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintWidth_percent=".98"
-        app:layout_constraintHeight_percent="1"/>
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".98" />
 
-<!--    <ImageView
+    <ImageView
         android:id="@+id/imageStateIv"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_icon_l_plus_green"
-        app:layout_constraintBottom_toBottomOf="@+id/pictureIv"
-        app:layout_constraintStart_toStartOf="@+id/pictureIv"
-        app:layout_constraintEnd_toEndOf="@+id/pictureIv"/>-->
+        android:backgroundTint="@color/transparent"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
